@@ -14,11 +14,11 @@ Follow the setup instructions on [the example mod](https://github.com/Turnip-Lab
 Add this in your `build.gradle`:
 ```groovy
 repositories {
-   maven { url = "https://jitpack.io" }
+    maven { url = "https://maven.thesignalumproject.net/releases" }
 }
 
 dependencies {
-    modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
+    modImplementation "turniplabs:halplibe:${project.halplibe_version}"
 }
 ```
 
@@ -30,3 +30,4 @@ dependencies {
 - youngsditch
 - sunsetsatellite
 - useless
+- halotroop2288
