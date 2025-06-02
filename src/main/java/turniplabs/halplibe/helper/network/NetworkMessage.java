@@ -1,8 +1,7 @@
 package turniplabs.halplibe.helper.network;
 
 import net.minecraft.core.entity.player.Player;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public interface NetworkMessage {
 	/**
@@ -11,7 +10,7 @@ public interface NetworkMessage {
 	 *
 	 * @param packet The packet to write data to.
 	 */
-	void encodeToUniversalPacket(@Nonnull UniversalPacket packet );
+	void encodeToUniversalPacket(@NotNull UniversalPacket packet );
 
 	/**
 	 * Decode the UniversalPacket into your NetworkMessage.
@@ -19,7 +18,7 @@ public interface NetworkMessage {
 	 *
 	 * @param packet The packet to read data from.
 	 */
-	void decodeFromUniversalPacket(@Nonnull UniversalPacket packet );
+	void decodeFromUniversalPacket(@NotNull UniversalPacket packet );
 
 	/**
 	 * Handle this {@link NetworkMessage}.

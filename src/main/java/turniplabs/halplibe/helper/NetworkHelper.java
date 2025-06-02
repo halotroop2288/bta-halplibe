@@ -93,9 +93,9 @@ public final class NetworkHelper {
             addMapping.setAccessible(false);
 
             locked = true;
-            HalpLibe.LOGGER.info("Successfully registered packet " + packet.getName() + " with id " + latestId);
+			HalpLibe.LOGGER.info("Successfully registered packet {} with id {}", packet.getName(), latestId);
         } catch (Throwable ignored) {
-            HalpLibe.LOGGER.warn("Packet Registration failed for packet " + packet.getName());
+			HalpLibe.LOGGER.warn("Packet Registration failed for packet {}", packet.getName());
         }
     }
 }

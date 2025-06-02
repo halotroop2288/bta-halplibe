@@ -1,5 +1,7 @@
 package turniplabs.halplibe.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Global;
 import net.minecraft.server.MinecraftServer;
@@ -14,7 +16,8 @@ import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.ItemInitEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
-@Mixin(value = MinecraftServer.class, remap = false)
+@Environment(EnvType.SERVER)
+@Mixin(MinecraftServer.class)
 public abstract class MinecraftServerMixin {
     @Shadow private static MinecraftServer instance;
 
@@ -49,17 +52,16 @@ public abstract class MinecraftServerMixin {
     /*
      * @author sunsetsatellite
      * @reason begone log4j (this fixes logging not existing on a modded server at the cost of no gui)
-
-    @Overwrite
-    public static void main(String[] args) {
-        StatList.init();
-
-        try {
-            MinecraftServer minecraftserver = new MinecraftServer();
-            (new ThreadServerApplication("Server thread", minecraftserver)).start();
-        } catch (Exception e) {
-            logger.error("Failed to start the minecraft server", e);
-        }
-
-    }*/
+     */
+//    @Overwrite
+//    public static void main(String[] args) {
+//        StatList.init();
+//
+//        try {
+//            MinecraftServer minecraftserver = new MinecraftServer();
+//            new ThreadServerApplication("Server thread", minecraftserver).start();
+//        } catch (Exception e) {
+//            logger.error("Failed to start the minecraft server", e);
+//        }
+//    }
 }

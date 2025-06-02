@@ -151,6 +151,7 @@ public final class NetworkHandler
 	 * Send a NetworkMessage to all Players from the server
 	 * If we are in SinglePlayer this will skip encoding and directly call the message handle
 	 */
+	@Environment(EnvType.SERVER)
 	@SuppressWarnings({"unused"})
 	public static void sendToAllPlayers( NetworkMessage message )
 	{
@@ -166,7 +167,7 @@ public final class NetworkHandler
 	 * If we are in SinglePlayer this will skip encoding and directly call the message handle
 	 */
 	@SuppressWarnings({"unused"})
-	@Environment( EnvType.CLIENT )
+	@Environment(EnvType.CLIENT)
 	public static void sendToServer( NetworkMessage message )
 	{
 		if (EnvironmentHelper.isSinglePlayer()){
@@ -180,6 +181,7 @@ public final class NetworkHandler
 	 * Send a NetworkMessage to all Players around a block from the server
 	 * If we are in SinglePlayer this will skip encoding and directly call the message handle
 	 */
+	@Environment(EnvType.SERVER)
 	@SuppressWarnings({"unused"})
 	public static void sendToAllAround(double x, double y, double z, double radius, int dimension, NetworkMessage message )
 	{

@@ -1,7 +1,6 @@
 package turniplabs.halplibe.util.toml;
 
-import com.google.errorprone.annotations.CanIgnoreReturnValue;
-import org.spongepowered.include.com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -87,11 +86,13 @@ public class Toml {
     public Toml(String comment) {
         this.comment = Optional.of(comment);
     }
-    @CanIgnoreReturnValue
-    public Toml addCategory(String comment, String name) {
+
+    @SuppressWarnings("UnusedReturnValue")
+	public Toml addCategory(String comment, String name) {
         return addCategory(name, new Toml(comment));
     }
-    @CanIgnoreReturnValue
+
+    @SuppressWarnings("UnusedReturnValue")
     public Toml addCategory(String name) {
         return addCategory(name, new Toml());
     }
@@ -111,11 +112,13 @@ public class Toml {
         }
         return category;
     }
-    @CanIgnoreReturnValue
+
+    @SuppressWarnings("UnusedReturnValue")
     public <T> Toml addEntry(String name, T value) {
         return addEntry(name, new Entry<>(value));
     }
-    @CanIgnoreReturnValue
+
+    @SuppressWarnings("UnusedReturnValue")
     public <T> Toml addEntry(String name, String comment, T value) {
         return addEntry(name, new CommentedEntry<>(comment, value));
     }
@@ -135,6 +138,7 @@ public class Toml {
             orderedKeys.add(name);
         return this;
     }
+
     @SuppressWarnings("unchecked")
     public ImmutableList<String> getOrderedKeys() {
         if (immutKeys == null)
@@ -200,6 +204,7 @@ public class Toml {
     public String toString() {
         return toString("", 0);
     }
+
     @SuppressWarnings("unused") // API function
     public boolean contains(String entry) {
         return get(entry) != null;

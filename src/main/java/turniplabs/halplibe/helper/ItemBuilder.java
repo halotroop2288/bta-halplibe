@@ -119,7 +119,7 @@ public final class ItemBuilder implements Cloneable {
     public <T extends Item> T build(T item){
         List<String> tokens;
 
-        if (overrideKey != null){
+        if (overrideKey != null) {
             tokens = Arrays.stream(overrideKey.split("\\.")).collect(Collectors.toList());
         } else {
             tokens = Arrays.stream(item.getKey().split("\\.")).collect(Collectors.toList());
@@ -129,15 +129,15 @@ public final class ItemBuilder implements Cloneable {
             item.withTags(tags);
         }
 
-        if (stackSize != null){
+        if (stackSize != null) {
             item.setMaxStackSize(stackSize);
         }
 
-        if (containerItemSupplier != null){
+        if (containerItemSupplier != null) {
             item.setContainerItem(containerItemSupplier.get());
         }
 
-        if (maxDamage != null){
+        if (maxDamage != null) {
             item.setMaxDamage(maxDamage);
         }
 

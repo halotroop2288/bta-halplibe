@@ -8,9 +8,20 @@
   "authors": [
     "Turnip Labs"
   ],
+  "contributors": [
+    "azurelmao",
+    "Flamarine",
+    "Jim Jim aka FatherCheese",
+    "icanttellyou",
+    "youngsditch",
+    "sunsetsatellite",
+    "useless",
+    "halotroop2288"
+  ],
   "contact": {
     "homepage": "",
-    "sources": "https://github.com/Turnip-Labs/bta-halplibe"
+    "sources": "https://github.com/Turnip-Labs/bta-halplibe",
+    "issues": "https://github.com/Turnip-Labs/bta-halplibe/issues"
   },
 
   "icon": "icon.png",

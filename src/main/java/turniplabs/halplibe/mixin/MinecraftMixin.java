@@ -1,5 +1,7 @@
 package turniplabs.halplibe.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.enums.EnumOS;
@@ -10,11 +12,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import turniplabs.halplibe.helper.network.NetworkHandler;
 import turniplabs.halplibe.util.*;
 
-@Mixin(
-        value = Minecraft.class,
-        remap = false
-)
 
+@Environment(EnvType.CLIENT)
+@Mixin(value = Minecraft.class)
 public abstract class MinecraftMixin {
 
     @Inject(method = "startGame", at = @At(value = "INVOKE",target = "Lnet/minecraft/core/data/DataLoader;loadRecipesFromFile(Ljava/lang/String;)V", ordinal = 3, shift = At.Shift.AFTER))
